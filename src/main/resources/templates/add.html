@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj zadanie</title>
+</head>
+<body>
+<h3 style="margin: 10px">Dodaj zadanie do wykonania</h3>
+<form method="post" th:action="@{/saveTask}" th:object="${task}">
+    <input type="text" th:field="*{name}" placeholder="Nazwa zadania" style="margin: 10px"><br/>
+    <input type="date" th:field="*{deadline}" style="margin: 10px"><br/>
+    <div class="form-group col-md-4" th:field="*{taskCategory}" style="margin: 10px">
+        <label for="taskCategory">Rodzaj</label>
+        <select id="taskCategory" class="form-control">
+            <option selected>Wybierz...</option>
+            <option value="1">HOMEWORK</option>
+            <option value="2">WORK</option>
+            <option value="3">COURSE</option>
+            <option value="3">SPORT</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin: 10px">Zapisz</button></form>
+</body>
+</html>
