@@ -13,9 +13,9 @@ import java.util.List;
 
 @Repository
 public class TasksRepository {
-    public final EntityManager entityManager;
-    public final EntityTransaction transaction;
-    public EntityManagerFactory entityManagerFactory;
+    private final EntityManager entityManager;
+    private final EntityTransaction transaction;
+    private EntityManagerFactory entityManagerFactory;
 
     public TasksRepository(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
