@@ -13,9 +13,9 @@
     <input type="text" th:field="*{name}" placeholder="Nazwa zadania" style="margin: 10px"><br/>
     <input type="date" th:field="*{deadline}" style="margin: 10px"><br/>
     <div class="form-group col-md-4" th:field="*{taskCategory}" style="margin: 10px">
-        <label for="taskCategory">Rodzaj</label>
-        <select id="taskCategory" class="form-control">
-            <option selected>Wybierz...</option>
+        <label>Rodzaj</label>
+        <select th:field ="*{taskCategory}" class="form-control">
+            <option value=selected>Wybierz...</option>
             <option value="HOMEWORK">HOMEWORK</option>
             <option value="WORK">WORK</option>
             <option value="COURSE">COURSE</option>
