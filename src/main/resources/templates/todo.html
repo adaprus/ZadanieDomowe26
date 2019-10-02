@@ -2,17 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <style>
+        h5{
+            color: darkblue;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Zadania do wykonania</title>
+    <div th:replace="myfragments::myHeader"></div>
 </head>
 <body>
 
-<div class="form-row" style="margin: 10px" th:each="task: ${toDoList}">
-    <div class="animal-info ml-2">
-        <h4 th:text="${task.name}"></h4>
-        <p th:text="${task.taskCategory}"></p>
-        <p th:text="${task.deadline}"></p>
+<div class="form-column" style="margin: 30px" th:each="task: ${toDoList}">
+    <div class="form-column">
+        <div>
+            <h5 th:text="'Zadanie: ' + ${task.name}"></h5>
+            <p th:text="'Kategoria zadania: ' + ${task.taskCategory}"></p>
+            <p th:text="'Termin końcowy zadania: ' + ${task.deadline}"></p>
+            <a th:href="@{'/checkoff?id=' + ${task.id}}">Oznacz jako gotowe!</a>
+        </div>
+
+
     </div>
 </div>
-
 </body>
 </html>

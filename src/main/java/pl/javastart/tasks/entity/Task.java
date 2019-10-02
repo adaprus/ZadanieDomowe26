@@ -20,15 +20,24 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private Category taskCategory;
 
-//    private boolean status;
+    private boolean ifDone;
+
+    public boolean isIfDone() {
+        return ifDone;
+    }
+
+    public void setIfDone(boolean ifDone) {
+        this.ifDone = ifDone;
+    }
 
     public Task() {
     }
 
-    public Task(String name, String description, LocalDate premiereDate, Category taskCategory) {
+    public Task(String name, String description, LocalDate premiereDate, Category taskCategory, boolean status) {
         this.name = name;
         this.deadline = premiereDate;
         this.taskCategory = taskCategory;
+        this.ifDone = status;
     }
 
     public long getId() {
@@ -70,6 +79,7 @@ public class Task {
                 ", name='" + name + '\'' +
                 ", deadline=" + deadline +
                 ", taskCategory=" + taskCategory +
+                ", ifDone=" + ifDone +
                 '}';
     }
 }

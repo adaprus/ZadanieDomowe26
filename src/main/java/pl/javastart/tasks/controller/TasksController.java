@@ -2,10 +2,7 @@ package pl.javastart.tasks.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import pl.javastart.tasks.entity.Task;
 import pl.javastart.tasks.repository.TasksRepository;
 
@@ -45,6 +42,21 @@ public class TasksController {
         model.addAttribute("toDoList", toDoList);
 
         return "todo";
+    }
+
+    @GetMapping("/archives")
+    public String doneTasks(Model model){
+        List<Task> doneTasksList = tasksRepository.doneTasksList();
+        model.addAttribute("doneTasksList", doneTasksList);
+
+        return "archives";
+    }
+
+    @GetMapping("/checkoff")
+    @ResponseBody
+    public String checkOffTask(@RequestParam Long id){
+        tasksRepository.checkOffTask(id);
+        return "Zadanie oznaczone jako gotowe!";
     }
 
 

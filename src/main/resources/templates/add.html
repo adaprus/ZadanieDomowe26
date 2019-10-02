@@ -2,6 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div th:replace="myfragments::myHeader"></div>
     <title>Dodaj zadanie</title>
 </head>
 <body>
@@ -13,10 +16,10 @@
         <label for="taskCategory">Rodzaj</label>
         <select id="taskCategory" class="form-control">
             <option selected>Wybierz...</option>
-            <option value="1">HOMEWORK</option>
-            <option value="2">WORK</option>
-            <option value="3">COURSE</option>
-            <option value="3">SPORT</option>
+            <option value="HOMEWORK">HOMEWORK</option>
+            <option value="WORK">WORK</option>
+            <option value="COURSE">COURSE</option>
+            <option value="SPORT">SPORT</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary" style="margin: 10px">Zapisz</button></form>
