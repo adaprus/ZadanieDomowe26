@@ -20,6 +20,8 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private Category taskCategory;
 
+//    private boolean status;
+
     public Task() {
     }
 

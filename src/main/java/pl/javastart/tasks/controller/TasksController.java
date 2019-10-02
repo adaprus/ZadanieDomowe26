@@ -41,7 +41,7 @@ public class TasksController {
     @GetMapping("/todo")
     public String tasksToDo(Model model) {
 
-        List toDoList = tasksRepository.toDoList();
+        List<Task> toDoList = tasksRepository.toDoList();
         model.addAttribute("toDoList", toDoList);
 
         return "todo";

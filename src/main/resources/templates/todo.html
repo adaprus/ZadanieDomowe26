@@ -5,11 +5,14 @@
     <title>Zadania do wykonania</title>
 </head>
 <body>
-<ul>
-    <li th:each="task: ${tasks}">
-        <p th:text="${task.name} + ${task.taskCategory.displayName}"></p>
-    </li>
-</ul>
+
+<div class="form-row" style="margin: 10px" th:each="task: ${toDoList}">
+    <div class="animal-info ml-2">
+        <h4 th:text="${task.name}"></h4>
+        <p th:text="${task.taskCategory}"></p>
+        <p th:text="${task.deadline}"></p>
+    </div>
+</div>
 
 </body>
 </html>
